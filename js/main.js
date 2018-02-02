@@ -22,8 +22,7 @@
 				$('.current-dot').removeClass('current-dot').next().addClass('current-dot');
 			} else if (tSliderHasStopped()) {
 				$('.current-t-slide').removeClass('current-t-slide');
-				$tStyles = {left: '0', right : '0' } 
-				$('.t-slide').first().addClass('current-t-slide').css($tStyles);
+				$('.t-slide').first().addClass('current-t-slide').css($tSlideInStyles);
 				tSetCss();
 				$('.current-dot').removeClass('current-dot')
 				$('.t-dot').first().addClass('current-dot');
@@ -37,8 +36,7 @@
 				$('.current-dot').removeClass('current-dot').prev().addClass('current-dot');
 			} else if (tSliderHasStopped()) {
 				$('.current-t-slide').removeClass('current-t-slide');
-				$tStyles = {left: '0', right : '0' } 
-				$('.t-slide').last().addClass('current-t-slide').css($tStyles);
+				$('.t-slide').last().addClass('current-t-slide').css($tSlideInStyles);
 				tSetCssLeft();
 				$('.current-dot').removeClass('current-dot')
 				$('.t-dot').last().addClass('current-dot');
