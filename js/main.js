@@ -18,9 +18,7 @@
 
 		function tSlideChangerRight() {
 			if ($('.current-t-slide').next().hasClass('t-slide') && tSliderHasStopped()) {
-				$nextOffset = $('.current-t-slide').next().css('left');
-				$tSlideOutStyles = {right: $nextOffset, left: 0 - $offset}
-				$('.current-t-slide').removeClass('current-t-slide').css($tSlideOutStyles).next().css($tSlideInStyles).addClass('current-t-slide');
+				$('.current-t-slide').removeClass('current-t-slide').css($hiddenSlideStylesLeft).next().css($tSlideInStyles).addClass('current-t-slide');
 				$('.current-dot').removeClass('current-dot').next().addClass('current-dot');
 			} else if (tSliderHasStopped()) {
 				$('.current-t-slide').removeClass('current-t-slide');
@@ -32,9 +30,7 @@
 		}
 		function tSlideChangerLeft() {
 			if ($('.current-t-slide').prev().hasClass('t-slide') && tSliderHasStopped()) {
-				$nextOffset = $('.current-t-slide').prev().css('right');
-				$tSlideOutStyles = {left: $nextOffset, right: 0 - $offset}
-				$('.current-t-slide').removeClass('current-t-slide').css($tSlideOutStyles).prev().css($tSlideInStyles).addClass('current-t-slide');
+				$('.current-t-slide').removeClass('current-t-slide').css($hiddenSlideStylesRight).prev().css($tSlideInStyles).addClass('current-t-slide');
 				$('.current-dot').removeClass('current-dot').prev().addClass('current-dot');
 			} else if (tSliderHasStopped()) {
 				$('.current-t-slide').removeClass('current-t-slide');
