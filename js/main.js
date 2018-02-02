@@ -16,7 +16,7 @@
 		function tSlideChangerRight() {
 			if ($('.current-t-slide').next().hasClass('t-slide') && tSliderHasStopped()) {
 				$nextOffset = $('.current-t-slide').next().css('left');
-				$tSlideOutStyles = {right: $nextOffset, left: 0 - $('.trent-slider').width()}
+				$tSlideOutStyles = {right: $nextOffset, left: 0 - $offset}
 				$tSlideInStyles = {left: '0', right: '0'}
 				$('.current-t-slide').removeClass('current-t-slide').next().css($tSlideInStyles).addClass('current-t-slide').prev().css('right', $nextOffset).css($tSlideOutStyles);
 				$('.current-dot').removeClass('current-dot').next().addClass('current-dot');
@@ -32,7 +32,7 @@
 		function tSlideChangerLeft() {
 			if ($('.current-t-slide').prev().hasClass('t-slide') && tSliderHasStopped()) {
 				$nextOffset = $('.current-t-slide').prev().css('right');
-				$tSlideOutStyles = {left: $nextOffset, right: 0 - $('.trent-slider').width()}
+				$tSlideOutStyles = {left: $nextOffset, right: 0 - $offset}
 				$tSlideInStyles = {left: '0', right: '0'}
 				$('.current-t-slide').removeClass('current-t-slide').prev().css($tSlideInStyles).addClass('current-t-slide').next().css('right', $nextOffset).css($tSlideOutStyles);
 				$('.current-dot').removeClass('current-dot').prev().addClass('current-dot');
