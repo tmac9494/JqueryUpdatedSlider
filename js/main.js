@@ -1,3 +1,4 @@
+$(document).ready(function() {
 //------------------trent's slider
 		$offset = $('.trent-slider').width();
 		$tSlideInStyles = {left: '0', right: '0'}
@@ -106,5 +107,5 @@
 				});
 			}
 		});
-
 		//close slider JS
+});
