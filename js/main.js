@@ -18,7 +18,7 @@
 				$nextOffset = $('.current-t-slide').next().css('left');
 				$tSlideOutStyles = {right: $nextOffset, left: 0 - $offset}
 				$tSlideInStyles = {left: '0', right: '0'}
-				$('.current-t-slide').removeClass('current-t-slide').next().css($tSlideInStyles).addClass('current-t-slide').prev().css('right', $nextOffset).css($tSlideOutStyles);
+				$('.current-t-slide').removeClass('current-t-slide').next().css($tSlideInStyles).addClass('current-t-slide').prev().css($tSlideOutStyles);
 				$('.current-dot').removeClass('current-dot').next().addClass('current-dot');
 			} else if (tSliderHasStopped()) {
 				$('.current-t-slide').removeClass('current-t-slide');
@@ -34,7 +34,7 @@
 				$nextOffset = $('.current-t-slide').prev().css('right');
 				$tSlideOutStyles = {left: $nextOffset, right: 0 - $offset}
 				$tSlideInStyles = {left: '0', right: '0'}
-				$('.current-t-slide').removeClass('current-t-slide').prev().css($tSlideInStyles).addClass('current-t-slide').next().css('right', $nextOffset).css($tSlideOutStyles);
+				$('.current-t-slide').removeClass('current-t-slide').prev().css($tSlideInStyles).addClass('current-t-slide').next().css($tSlideOutStyles);
 				$('.current-dot').removeClass('current-dot').prev().addClass('current-dot');
 			} else if (tSliderHasStopped()) {
 				$('.current-t-slide').removeClass('current-t-slide');
