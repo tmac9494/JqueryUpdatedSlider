@@ -2,6 +2,8 @@
 		$offset = $('.trent-slider').width();
 		$tSlideInStyles = {left: '0', right: '0'}
 		$t_loadBarStopStyles = {animation : "none", width : "0%"}
+		$hiddenSlideStylesRight = {left: $offset, right: 0 - $offset}
+		$hiddenSlideStylesLeft = {right: $offset, left: 0 - $offset}
 		
 		//slider functions
 		function tStartLoadBar() {$('.t-load-bar .inner-load-bar').css('animation', 'load 4.5s linear infinite');}
@@ -44,19 +46,17 @@
 		}
 
 		function tSetCss() {
-			$hiddenSlideStyles = {left: $offset, right: 0 - $offset}
 			$('.t-slide').each(function(index, value) {
 				if (index > 0) {
-					$(this).css($hiddenSlideStyles);
+					$(this).css($hiddenSlideStylesRight);
 				}
 			});
 		}
 		function tSetCssLeft() {
-			$hiddenSlideStyles = {right: $offset, left: 0 - $offset}
 			$t_total = $('.t-slide').length - 1;
 			$('.t-slide').each(function(index, value) {
 				if (index < $t_total) {
-					$(this).css($hiddenSlideStyles)
+					$(this).css($hiddenSlideStylesLeft)
 				}
 			});
 		}
@@ -103,13 +103,9 @@
 					$('.t-dot').eq($newDotIndex).addClass('current-dot');
 					$('.t-slide').eq($newDotIndex).css($tSlideInStyles).addClass('current-t-slide');
 					if (index > $newDotIndex) {
-						//add styles to slides to the right
-						$hiddenSlideStyles = {left: $offset, right: 0 - $offset}
-						$(this).css($hiddenSlideStyles);
+						$(this).css($hiddenSlideStylesRight);
 					} else if (index < $newDotIndex) {
-						//add styles to slides to the left
-						$hiddenSlideStyles = {right: $offset, left: 0 - $offset}
-						$(this).css($hiddenSlideStyles);
+						$(this).css($hiddenSlideStylesLeft);
 					}
 				});
 			}
