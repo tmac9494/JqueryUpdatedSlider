@@ -16,5 +16,8 @@
 .t-slider-controls .t-slide-dots {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:table;content:"";clear:both;}
 .t-slider-controls .t-slide-dots .t-dot {background:#fafafa;width:8px;height:8px;margin:5px;float:left;border-radius:50%;transition:.65s;} 
 .t-slider-controls .t-slide-dots .t-dot.current-dot,.t-slider-controls .t-slide-dots .t-dot:hover {transform:scale(1.65);cursor:pointer;}
+/*text-slider*/
+.text-slider .t-slide-content {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:500;padding:10px 5px;color:#fafafa;width:90%;max-width:500px;background:#000;}
+.text-slider .t-slide-content p {margin-bottom:0;}
 /*close slider css*/
 @media screen and (min-width:768px) {.t-slider-controls .arrow:hover {background:rgba(0,0,0,0.32);}}
