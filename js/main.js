@@ -85,7 +85,7 @@ function tRunSlider(sliderName) {
 	});
 
 	//slider-code
-	$tSliderHeight = $('.trent-slider').width() / 2;
+	$tSliderHeight = $(''+ sliderName +'.trent-slider').width() / 2;
 	if ($tSliderHeight > 650) {
 		$('.t-slide').each(function(index, value) {
 				$src = $('.t-slide').eq(index).find('img').attr('src');
@@ -138,8 +138,8 @@ function tRunSlider(sliderName) {
 			setTextSlideHeight();
 		}
 	});
-	//close slider JS
-}
+}//close slider JS
+
 tRunSlider('.main-slider')
 tRunSlider('.secondary-slider');
 tRunSlider('.third-slider');
