@@ -102,15 +102,22 @@ function tRunSlider(sliderName) {
 	tStartLoadBar();
 	$(sliderName).hover(function() {$(''+ sliderName +' .t-load-bar .inner-load-bar').css($t_loadBarStopStyles);}, function() {tStartLoadBar()})
 	//interval sllide change
+	$isSlideRunning = false;
 	var tSlideChange = window.setInterval(function() {
 		tSlideChangerRight();
+		$isSlideRunning = true;
 	}, 4500);
 	$(sliderName).mouseover(function() {
 		clearInterval(tSlideChange);
+		$isSlideRunning = false;
 	}).mouseout(function() {
-		tSlideChange = window.setInterval(function() {
-			tSlideChangerRight();
-		},4500);
+		if ($isSlideRunning) {
+			//do nothing
+		} else {
+			tSlideChange = window.setInterval(function() {
+				tSlideChangerRight();
+			},4500);
+		}
 	});
 
 	// -----slider controls
