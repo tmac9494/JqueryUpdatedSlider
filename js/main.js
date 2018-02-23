@@ -100,21 +100,22 @@ function tRunSlider(sliderName) {
 	tSetCss();
 	//load bar 
 	tStartLoadBar();
-	$(sliderName).hover(function() {$(''+ sliderName +' .t-load-bar .inner-load-bar').css($t_loadBarStopStyles);}, function() {tStartLoadBar()})
 	//interval sllide change
 	var tSlideChange = window.setInterval(function() {
 		tSlideChangerRight();
 	}, 4500);
 	$(sliderName).mouseover(function() {
+		$(''+ sliderName +' .t-load-bar .inner-load-bar').css($t_loadBarStopStyles);
 		clearInterval(tSlideChange);
 	}).mouseout(function() {
-		$(''+ sliderName +' .t-load-bar .inner-load-bar').css($t_loadBarStopStyles);
-		tStartLoadBar();
-		clearInterval(tSlideChange);
-		tSlideChange = window.setInterval(function() {
-			tSlideChangerRight();
-		},4500);
+			$(''+ sliderName +' .t-load-bar .inner-load-bar').css($t_loadBarStopStyles);
+			tStartLoadBar();
+			clearInterval(tSlideChange);
+			tSlideChange = window.setInterval(function() {
+				tSlideChangerRight();
+			},4500);
 	});
+
 
 	// -----slider controls
 	//arrow
